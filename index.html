@@ -160,13 +160,13 @@ function render()
 function animate()
 {
 	requestAnimationFrame(animate);
-	//deltaTime = clock.getDelta();
-	//totalTime += deltaTime;
-	var timer = Date.now() * 0.0006; //Velocidad de giro de la cámara
+	deltaTime = clock.getDelta();
+	totalTime += deltaTime;
+	
 
 	// Movimiento de la cámara en ambos ejes
-	camera.position.x = Math.cos( timer ) * 18;
-	camera.position.z = Math.sin( timer ) * 18;
+	camera.position.x = Math.cos( totalTime ) * 18;
+	camera.position.z = Math.sin( totalTime ) * 18;
 	
 	//camera.lookAt( cameraTarget );
 	update();
