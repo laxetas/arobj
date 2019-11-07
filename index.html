@@ -164,11 +164,6 @@ function animate()
 	totalTime += deltaTime;
 	
 
-	// Movimiento de la cámara en ambos ejes
-	camera.position.x = Math.cos( totalTime ) * 18;
-	camera.position.z = Math.sin( totalTime ) * 18;
-	
-	//camera.lookAt( cameraTarget );
 	update();
 	render();
 }
