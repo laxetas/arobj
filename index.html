@@ -3,9 +3,9 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<title>Hello, world!</title>
 	<!-- include three.js library -->
-	<script src='js/three.min.js'></script>
-	<script src="js/STLLoader.js"></script>
-	
+	<script src='js/three.js'></script>
+	<script src='js/OBJLoader.js'></script>
+	<script src='js/MTLLoader.js'></script>
 	<!-- include jsartookit -->
 	<script src="jsartoolkit5/artoolkit.min.js"></script>
 	<script src="jsartoolkit5/artoolkit.api.js"></script>
@@ -57,9 +57,9 @@ function initialize()
 	renderer.domElement.style.left = '0px'
 	document.body.appendChild( renderer.domElement );
 
-	//clock = new THREE.Clock();
-	//deltaTime = 0;
-	//totalTime = 0;
+	clock = new THREE.Clock();
+	deltaTime = 0;
+	totalTime = 0;
 	
 	////////////////////////////////////////////////////////////
 	// setup arToolkitSource
@@ -108,7 +108,7 @@ function initialize()
 	////////////////////////////////////////////////////////////
 
 	// build markerControls
-markerRoot1 = new THREE.Group();
+	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
 	let markerControls1 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot1, {
 		type: 'pattern', patternUrl: "data/hiro.patt",
@@ -165,7 +165,6 @@ function animate()
 	update();
 	render();
 }
-
 
 </script>
 
