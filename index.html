@@ -5,6 +5,7 @@
 	<!-- include three.js library -->
 	<script src='js/three.min.js'></script>
 	<script src='js/OBJLoader.js'></script>
+	<script src='js/OBJVertexColorLoader.js'></script>
 	<script src='js/MTLLoader.js'></script>
 	<!-- include jsartookit -->
 	<script src="jsartoolkit5/artoolkit.min.js"></script>
@@ -141,6 +142,16 @@ function initialize()
 					markerRoot1.add(mesh0);
 				}, onProgress, onError );
 		});
+	new THREE.OBJVertexColorLoader(manager);
+            .load('models/yo.obj', function (object) {
+                object.rotation.x = Math.PI;
+                //console.dir(object);
+                scene.add(object);
+                objects.push(object);
+
+                progressBar.style.display = "none";
+
+            }, onProgress, onError);
 
 	new THREE.MTLLoader()
 		.setPath( 'models/' )
